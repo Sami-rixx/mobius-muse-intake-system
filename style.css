@@ -1,6 +1,7 @@
-/* ===========================
-   GENERAL STYLING
-=========================== */
+/* ==========================================
+   MOBIUS MUSE - PAGE 1
+   STYLE.CSS
+========================================== */
 
 *{
     margin:0;
@@ -9,196 +10,338 @@
 }
 
 body{
+
+    background:#e6e6e6;
+
     font-family:Arial, Helvetica, sans-serif;
-    background:#f4f7fb;
-    color:#333;
-    line-height:1.6;
+
+    color:#222;
+
+    padding:40px 20px;
+
 }
 
-/* ===========================
-   CONTAINER
-=========================== */
+/* ==========================
+   PAPER
+========================== */
 
 .container{
-    width:90%;
+
     max-width:900px;
-    margin:40px auto;
-    background:#fff;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,0.15);
+
+    margin:auto;
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:6px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.15);
+
 }
 
-/* ===========================
+/* ==========================
    HEADER
-=========================== */
+========================== */
 
 .header{
+
     text-align:center;
+
     margin-bottom:30px;
+
 }
 
 .header h1{
-    color:#0a3d62;
+
+    font-size:36px;
+
+    color:#000;
+
+    letter-spacing:2px;
+
     margin-bottom:8px;
+
 }
 
 .header h2{
-    color:#444;
-    margin-bottom:5px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    margin-bottom:6px;
+
 }
 
 .header p{
-    color:#777;
+
+    font-size:18px;
+
+    color:#666;
+
 }
 
-/* ===========================
+/* ==========================
+   PAGE NUMBER
+========================== */
+
+.page-number{
+
+    text-align:right;
+
+    margin-bottom:25px;
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+/* ==========================
    PROGRESS BAR
-=========================== */
+========================== */
 
 .progress-container{
+
     width:100%;
-    height:15px;
-    background:#ddd;
-    border-radius:20px;
-    overflow:hidden;
-    margin-bottom:30px;
+
+    height:10px;
+
+    background:#dcdcdc;
+
+    border-radius:50px;
+
+    margin-bottom:35px;
+
 }
 
 .progress-bar{
+
     width:25%;
+
     height:100%;
-    background:#27ae60;
+
+    background:#000;
+
+    border-radius:50px;
+
 }
 
-/* ===========================
+/* ==========================
    FORM
-=========================== */
+========================== */
 
 .section{
+
     margin-bottom:25px;
+
 }
 
 label{
+
     display:block;
-    margin-bottom:8px;
+
     font-weight:bold;
+
+    margin-bottom:8px;
+
 }
 
 input[type=text],
-input[type=date]{
+input[type=date],
+textarea{
 
     width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
+
+    padding:14px;
+
+    border:1px solid #999;
+
+    border-radius:5px;
+
     font-size:16px;
+
+    transition:.3s;
+
 }
 
-input[type=text]:focus,
-input[type=date]:focus{
+textarea{
+
+    min-height:130px;
+
+    resize:vertical;
+
+}
+
+input:focus,
+textarea:focus{
 
     outline:none;
-    border:2px solid #0a3d62;
+
+    border:2px solid #000;
+
 }
 
-/* ===========================
+/* ==========================
    QUESTIONS
-=========================== */
+========================== */
 
 h3{
-    color:#0a3d62;
-    margin:20px 0 10px;
+
+    margin-top:20px;
+
+    margin-bottom:12px;
+
+    font-size:22px;
+
 }
 
 p{
-    margin-bottom:15px;
+
+    margin-bottom:18px;
+
+    line-height:1.8;
+
 }
+
+/* ==========================
+   RADIO BUTTONS
+========================== */
 
 .radio-group{
 
     display:flex;
+
     flex-direction:column;
+
     gap:15px;
-    margin-bottom:25px;
+
+    margin-bottom:30px;
+
 }
 
 .radio-group label{
 
-    font-weight:normal;
     display:flex;
+
     align-items:flex-start;
-    gap:10px;
+
+    gap:12px;
+
+    font-weight:normal;
+
 }
 
-/* ===========================
-   HORIZONTAL LINE
-=========================== */
+input[type=radio]{
+
+    margin-top:5px;
+
+    transform:scale(1.2);
+
+}
+
+/* ==========================
+   LINE
+========================== */
 
 hr{
-    margin:25px 0;
+
+    margin:35px 0;
+
     border:none;
-    border-top:1px solid #ddd;
+
+    border-top:1px solid #cfcfcf;
+
 }
 
-/* ===========================
-   MOBILE RESPONSIVE
-=========================== */
+/* ==========================
+   BUTTONS
+========================== */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:40px;
+
+}
+
+button{
+
+    background:#000;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 35px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    border-radius:5px;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#333;
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
 
 @media(max-width:768px){
 
 .container{
 
-    width:95%;
-    padding:20px;
+    padding:25px;
+
 }
 
 .header h1{
 
     font-size:28px;
+
 }
 
 .header h2{
 
-    font-size:20px;
-}
+    font-size:18px;
 
 }
-/* ===========================
-   TEXTAREA
-=========================== */
 
-textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
+.header p{
+
     font-size:16px;
-    resize:vertical;
-    min-height:120px;
+
 }
 
-/* ===========================
-   BUTTONS
-=========================== */
+h3{
 
-.buttons{
-    display:flex;
-    justify-content:flex-end;
-    margin-top:30px;
+    font-size:19px;
+
 }
 
 button{
-    background:#0a3d62;
-    color:white;
-    border:none;
-    padding:12px 30px;
-    border-radius:6px;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
+
+    width:100%;
+
 }
 
-button:hover{
-    background:#145a86;
+.buttons{
+
+    justify-content:center;
+
+}
+
 }
