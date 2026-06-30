@@ -48,6 +48,7 @@ body{
 .header{
 
     text-align:center;
+   color:#0B4F8C;
 
     margin-bottom:30px;
 
@@ -68,6 +69,7 @@ body{
 .header h2{
 
     font-size:22px;
+     color:#1565C0;
 
     font-weight:600;
 
@@ -79,7 +81,7 @@ body{
 
     font-size:18px;
 
-    color:#666;
+    color:#1E5AA8;
 
 }
 
