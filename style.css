@@ -345,3 +345,66 @@ button{
 }
 
 }
+/* ==========================================
+   OPTIONAL PROFESSIONAL FINISHES
+========================================== */
+
+/* Smooth page animation */
+.container{
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Better placeholders */
+::placeholder{
+    color:#999;
+    font-style:italic;
+}
+
+/* Better input hover */
+input[type=text]:hover,
+input[type=date]:hover,
+textarea:hover{
+    border-color:#555;
+}
+
+/* Better radio hover */
+.radio-group label:hover{
+    background:#f7f7f7;
+    padding:8px;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+/* Button click animation */
+button:active{
+    transform:scale(0.98);
+}
+
+/* Nice scrollbar */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#888;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#555;
+}
