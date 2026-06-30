@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
+    <title>Mobius Muse Intake Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>MOBIUS MUSE</h1>
+        <h2>Blueprint School Data Intake Form</h2>
+        <p>School Policy & Identity</p>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <form id="pageOne">
+
+        <div class="section">
+
+            <label for="schoolName">
+                School Name
+            </label>
+
+            <input
+                type="text"
+                id="schoolName"
+                name="schoolName"
+                placeholder="Enter School Name"
+                required>
+
+        </div>
+
+        <div class="section">
+
+            <label for="filledBy">
+                Filled In By
+            </label>
+
+            <input
+                type="text"
+                id="filledBy"
+                name="filledBy"
+                placeholder="Your Name"
+                required>
+
+        </div>
+
+        <div class="section">
+
+            <label for="date">
+                Date
+            </label>
+
+            <input
+                type="date"
+                id="date"
+                name="date"
+                required>
+
+        </div>
+
+        <hr>
+
+        <h3>1. Generalist Teachers and Grades</h3>
+
+        <p>
+            A teacher who teaches a subject in one grade can they
+            also teach it in OTHER grades they are not specifically
+            listed for?
+        </p>
+
+        <div class="radio-group">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="gradeScope"
+                    value="explicit_only"
+                    required>
+
+                No - only the exact grades I list per teacher
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="gradeScope"
+                    value="all_grades">
+
+                Yes - any grade, as long as they teach that subject somewhere
+
+            </label>
+
+        </div>
+
+        <hr>
+
+        <h3>2. If There Are Not Enough Teaching Hours</h3>
+
+        <p>
+            If the required periods add up to more than your
+            teachers can cover within their maximum periods,
+            what should the generator do?
+        </p>
+
+        <div class="radio-group">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="overload"
+                    value="block"
+                    required>
+
+                Stop and tell me exactly where the gap is.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="overload"
+                    value="allow">
+
+                Go ahead anyway and flag whoever exceeds the limit.
+
+            </label>
+
+        </div>
+
+        <hr>
+
+        <h3>3. If Something Is Unclear</h3>
+
+        <p>
+            If a number is hard to read or information
+            conflicts, what should happen?
+        </p>
+
+        <div class="radio-group">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="ambiguity"
+                    value="warn"
+                    required>
+
+                Use a sensible default and show me what needs checking.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="ambiguity"
+                    value="stop">
+
+                Stop and make me resolve it first.
+
+            </label>
+
+        </div>
