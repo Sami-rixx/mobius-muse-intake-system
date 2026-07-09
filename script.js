@@ -231,3 +231,102 @@ if (generateTeachers) {
     });
 
     }
+
+// ======================================
+// PAGE 4 - TEACHER FORM
+// ======================================
+
+const saveTeacher = document.getElementById("saveTeacher");
+
+if (saveTeacher) {
+
+    const teachers = JSON.parse(localStorage.getItem("teachers")) || [];
+    let currentTeacher = parseInt(localStorage.getItem("currentTeacher")) || 0;
+
+    // Display current teacher number
+    const teacherHeading = document.getElementById("teacherHeading");
+
+    if (teacherHeading) {
+        teacherHeading.innerText =
+            "Teacher " + (currentTeacher + 1) + " of " + teachers.length;
+    }
+
+    saveTeacher.addEventListener("click", function () {
+
+        const teacherForm = document.getElementById("teacherForm");
+
+        if (!teacherForm.checkValidity()) {
+
+            teacherForm.reportValidity();
+            return;
+
+        }
+
+        // Collect selected subjects
+        let selectedSubjects = [];
+
+        document
+            .querySelectorAll(".checkbox-group input[type='checkbox']")
+            .forEach(function (checkbox) {
+
+                if (checkbox.checked) {
+
+                    selectedSubjects.push(checkbox.value);
+
+                }
+
+            });
+
+        // Save teacher data
+        teachers[currentTeacher] = {
+
+            teacherNumber: currentTeacher + 1,
+
+            teacherName:
+                document.getElementById("teacherName").value,
+
+            tscNumber:
+                document.getElementById("tscNumber").value,
+
+            employmentType:
+                document.getElementById("employmentType").value,
+
+            maximumLessons:
+                document.getElementById("maximumLessons").value,
+
+            specialist:
+                document.getElementById("specialistTeacher").value,
+
+            subjects: selectedSubjects
+
+        };
+
+        localStorage.setItem(
+            "teachers",
+            JSON.stringify(teachers)
+        );
+
+        currentTeacher++;
+
+        localStorage.setItem(
+            "currentTeacher",
+            currentTeacher
+        );
+
+        // More teachers remaining
+        if (currentTeacher < teachers.length) {
+
+            window.location.reload();
+
+        }
+
+        // Finished all teachers
+        else {
+
+            window.location.href = "review.html";
+
+        }
+
+    });
+
+            }
