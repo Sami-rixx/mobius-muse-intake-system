@@ -330,3 +330,193 @@ if (saveTeacher) {
     });
 
             }
+
+// ======================================
+// PAGE 5 - REVIEW PAGE
+// ======================================
+
+const schoolReview = document.getElementById("schoolReview");
+
+if (schoolReview) {
+
+    const pageOneData =
+        JSON.parse(localStorage.getItem("pageOneData")) || {};
+
+    const pageTwoData =
+        JSON.parse(localStorage.getItem("pageTwoData")) || {};
+
+    const pageThreeData =
+        JSON.parse(localStorage.getItem("pageThreeData")) || {};
+
+    const teachers =
+        JSON.parse(localStorage.getItem("teachers")) || [];
+
+    // ==========================
+    // SCHOOL INFORMATION
+    // ==========================
+
+    schoolReview.innerHTML = `
+
+        <div class="review-card">
+
+            <h4>School Details</h4>
+
+            <p><strong>School Name:</strong> ${pageOneData.schoolName || ""}</p>
+
+            <p><strong>Filled By:</strong> ${pageOneData.filledBy || ""}</p>
+
+            <p><strong>Date:</strong> ${pageOneData.date || ""}</p>
+
+            <p><strong>Total Teachers:</strong> ${pageThreeData.teacherCount || 0}</p>
+
+            <p><strong>Notes:</strong> ${pageThreeData.schoolNotes || "None"}</p>
+
+        </div>
+
+    `;
+
+    // ==========================
+    // SUBJECT ROSTER
+    // ==========================
+
+    const subjectReview =
+        document.getElementById("subjectReview");
+
+    subjectReview.innerHTML = `
+
+        <div class="review-card">
+
+            <h4>Subject Allocation</h4>
+
+            <pre>${JSON.stringify(pageTwoData,null,4)}</pre>
+
+        </div>
+
+    `;
+
+    // ==========================
+    // TEACHERS
+    // ==========================
+
+    const teacherReview =
+        document.getElementById("teacherReview");
+
+    teacherReview.innerHTML = "";
+
+    teachers.forEach(function(teacher){
+
+        teacherReview.innerHTML += `
+
+        <div class="review-card">
+
+        <h4>
+
+        Teacher ${teacher.teacherNumber}
+
+        </h4>
+
+        <p>
+
+        <strong>Name:</strong>
+
+        ${teacher.teacherName}
+
+        </p>
+
+        <p>
+
+        <strong>TSC:</strong>
+
+        ${teacher.tscNumber}
+
+        </p>
+
+        <p>
+
+        <strong>Employment:</strong>
+
+        ${teacher.employmentType}
+
+        </p>
+
+        <p>
+
+        <strong>Maximum Lessons:</strong>
+
+        ${teacher.maximumLessons}
+
+        </p>
+
+        <p>
+
+        <strong>Specialist:</strong>
+
+        ${teacher.specialist}
+
+        </p>
+
+        <p>
+
+        <strong>Subjects:</strong>
+
+        ${teacher.subjects.join(", ")}
+
+        </p>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+// ======================================
+// DOWNLOAD JSON
+// ======================================
+
+const doneButton = document.getElementById("doneButton");
+
+if(doneButton){
+
+    doneButton.addEventListener("click",function(){
+
+        const finalData={
+
+            school:
+            JSON.parse(localStorage.getItem("pageOneData")),
+
+            subjects:
+            JSON.parse(localStorage.getItem("pageTwoData")),
+
+            schoolInfo:
+            JSON.parse(localStorage.getItem("pageThreeData")),
+
+            teachers:
+            JSON.parse(localStorage.getItem("teachers"))
+
+        };
+
+        const jsonData=
+        JSON.stringify(finalData,null,4);
+
+        const blob=
+        new Blob([jsonData],
+        {type:"application/json"});
+
+        const link=
+        document.createElement("a");
+
+        link.href=
+        URL.createObjectURL(blob);
+
+        link.download=
+        "Mobius_Muse_Data.json";
+
+        link.click();
+
+        alert("JSON downloaded successfully!");
+
+    });
+
+}
