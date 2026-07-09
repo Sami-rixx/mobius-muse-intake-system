@@ -707,3 +707,74 @@ table input[type=number]{
     margin-bottom:8px;
 
 }
+/*teacher.html*/
+
+/* ==========================
+   SELECT BOX
+========================== */
+
+select{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #90CAF9;
+
+    border-radius:6px;
+
+    font-size:16px;
+
+    background:white;
+
+}
+
+select:focus{
+
+    outline:none;
+
+    border:2px solid #1976D2;
+
+}
+
+/* ==========================
+   CHECKBOX GROUP
+========================== */
+
+.checkbox-group{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:12px;
+
+    margin-top:12px;
+
+}
+
+.checkbox-group label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px;
+
+    background:#f7fbff;
+
+    border:1px solid #d6e9fb;
+
+    border-radius:6px;
+
+}
+
+.checkbox-group label:hover{
+
+    background:#eaf4ff;
+
+    cursor:pointer;
+
+}
