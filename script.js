@@ -141,3 +141,93 @@ if(nextPage2){
     });
 
 }
+
+// ================================
+// PAGE 3
+// ================================
+
+const generateTeachers = document.getElementById("generateTeachers");
+
+if (generateTeachers) {
+
+    generateTeachers.addEventListener("click", function () {
+
+        const pageThree = document.getElementById("pageThree");
+
+        if (!pageThree.checkValidity()) {
+
+            pageThree.reportValidity();
+            return;
+
+        }
+
+        const teacherCount = parseInt(
+            document.getElementById("teacherCount").value
+        );
+
+        const schoolNotes = document.getElementById("schoolNotes").value;
+
+        const pageThreeData = {
+
+            teacherCount: teacherCount,
+
+            schoolNotes: schoolNotes
+
+        };
+
+        // Save Page 3 Data
+        localStorage.setItem(
+            "pageThreeData",
+            JSON.stringify(pageThreeData)
+        );
+
+        // Create empty teacher list
+        const teachers = [];
+
+        for (let i = 1; i <= teacherCount; i++) {
+
+            teachers.push({
+
+                teacherNumber: i,
+
+                teacherName: "",
+
+                tscNumber: "",
+
+                employmentType: "",
+
+                maximumLessons: "",
+
+                specialist: false,
+
+                subjects: [],
+
+                grades: []
+
+            });
+
+        }
+
+        // Save teacher list
+        localStorage.setItem(
+            "teachers",
+            JSON.stringify(teachers)
+        );
+
+        // Keep track of current teacher
+        localStorage.setItem(
+            "currentTeacher",
+            0
+        );
+
+        alert(
+            teacherCount +
+            " teacher forms will now be generated."
+        );
+
+        // Open first teacher form
+        window.location.href = "teacher.html";
+
+    });
+
+    }
