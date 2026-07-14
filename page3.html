@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Mobius Muse | Teacher Information</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>MOBIUS MUSE</h1>
+
+<h2>Blueprint School Data Intake Form</h2>
+
+<p>Teacher Information</p>
+
+<div class="page-number">
+
+Page 3 of 12
+
+</div>
+
+</div>
+
+<div class="progress-container">
+
+<div class="progress-bar"
+style="width:75%;"></div>
+
+</div>
+
+<form id="pageThree">
+
+<h3>Number of Teachers</h3>
+
+<p>
+
+Enter the total number of teachers in your school.
+The system will automatically generate one form for each teacher.
+
+</p>
+
+<div class="section">
+
+<label for="teacherCount">
+
+Total Number of Teachers
+
+</label>
+
+<input
+type="number"
+id="teacherCount"
+name="teacherCount"
+min="1"
+placeholder="Example: 18"
+required>
+
+</div>
+
+<hr>
+
+<div class="section">
+
+<label for="schoolNotes">
+
+Additional Notes (Optional)
+
+</label>
+
+<textarea
+id="schoolNotes"
+rows="6"
+placeholder="Enter any additional information about your teaching staff..."></textarea>
+
+</div>
+  <hr>
+
+<h3>What Happens Next?</h3>
+
+<p>
+After clicking <strong>Next</strong>, the system will automatically generate one
+teacher information form for every teacher entered above.
+</p>
+
+<div class="section">
+
+    <label>Example</label>
+
+    <div class="preview-box">
+
+        If you enter <strong>15</strong> teachers, the system will generate:
+
+        <ul>
+
+            <li>Teacher 1 of 15</li>
+
+            <li>Teacher 2 of 15</li>
+
+            <li>Teacher 3 of 15</li>
+
+            <li>...</li>
+
+            <li>Teacher 15 of 15</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<div class="buttons">
+
+<button
+type="button"
+onclick="window.location.href='page2.html'">
+
+Previous
+
+</button>
+
+<button
+type="button"
+id="generateTeachers">Next</button>
+
+</div>
+
+</form>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
